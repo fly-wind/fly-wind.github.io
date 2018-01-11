@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JS - 基础程序结构 | Hexo</title>
+  <title>JS - 基础程序结构 | 上天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本程序结构包含 3 种">
+  <meta name="description" content="基本程序结构包含 3 种 1、顺序结构顺序结构，即从上至下，依次执行。">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS - 基础程序结构">
 <meta property="og:url" content="http://yoursite.com/2018/01/08/js-basicpro/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基本程序结构包含 3 种">
-<meta property="og:updated_time" content="2018-01-08T10:26:40.000Z">
+<meta property="og:site_name" content="上天">
+<meta property="og:description" content="基本程序结构包含 3 种 1、顺序结构顺序结构，即从上至下，依次执行。">
+<meta property="og:updated_time" content="2018-01-10T06:26:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS - 基础程序结构">
-<meta name="twitter:description" content="基本程序结构包含 3 种">
+<meta name="twitter:description" content="基本程序结构包含 3 种 1、顺序结构顺序结构，即从上至下，依次执行。">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="上天" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -50,7 +50,7 @@
 			<img src="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">ziyan</a></h1>
+		  <h1 class="header-author"><a href="/">fly-wind</a></h1>
 		</hgroup>
 		
 
@@ -83,8 +83,6 @@
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/3039880311" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="##" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 			</div>
 		</nav>
 	</header>		
@@ -104,7 +102,7 @@
 				<img src="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">ziyan</h1>
+			  <h1 class="header-author js-header-author">fly-wind</h1>
 			</hgroup>
 			
 			
@@ -119,8 +117,6 @@
 						<a class="github" target="_blank" href="https://github.com/fly-wind" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/3039880311" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="##" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -164,8 +160,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基本程序结构包含 3 种<br><a id="more"></a></p>
-<h3 id="1、顺序结构"><a href="#1、顺序结构" class="headerlink" title="1、顺序结构"></a>1、顺序结构</h3><p>顺序结构，即从上至下，依次执行。<br>eg:交换 a 和 b 的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2, c = 3;</span><br><span class="line">c = a;</span><br><span class="line">a = b;</span><br><span class="line">b = c;</span><br><span class="line">console.log(b); === 1</span><br></pre></td></tr></table></figure></p>
+        <p>基本程序结构包含 3 种</p>
+<h3 id="1、顺序结构"><a href="#1、顺序结构" class="headerlink" title="1、顺序结构"></a>1、顺序结构</h3><p>顺序结构，即从上至下，依次执行。<br><a id="more"></a><br>eg:交换 a 和 b 的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2, c = 3;</span><br><span class="line">c = a;</span><br><span class="line">a = b;</span><br><span class="line">b = c;</span><br><span class="line">console.log(b); === 1</span><br></pre></td></tr></table></figure></p>
 <p>如果调换语句的顺序，将得到不同的结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1, b = 2, c = 3;</span><br><span class="line">a = b;</span><br><span class="line">c = a;</span><br><span class="line">b = c;</span><br><span class="line">console.log(b); === 2</span><br></pre></td></tr></table></figure></p>
 <h3 id="2、循环结构"><a href="#2、循环结构" class="headerlink" title="2、循环结构"></a>2、循环结构</h3><p>循环结构包含：判断表达式、循环体、结束语句，以下用前三种方式分别求出10以内的正整数和<br><strong>可以用 break 或者 continue 结束语句</strong></p>
 <ul>
@@ -177,13 +173,11 @@
 <li><p>while 语句</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var count = 0;</span><br><span class="line">var i = 0;</span><br><span class="line">while(i &lt;= 10)&#123;</span><br><span class="line">    count += i;</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br><span class="line">console.log(count);  === 55</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>do-while 语句</p>
+<li><p>do-while 语句<br>循环体里的语句至少被执行一次</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var count = 0;</span><br><span class="line">var i = 0;</span><br><span class="line">do &#123;</span><br><span class="line">    count += i;</span><br><span class="line">    i++;</span><br><span class="line">&#125; while(i &lt;= 10)</span><br><span class="line">console.log(count);  === 55</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>循环体里的语句至少被执行一次</p>
-<ul>
-<li>for-in 语句<br>枚举对象。每个对象都应该有值，如果没有值，ECMAScript 5 不再执行该循环体，更早的版本会抛出错误<h3 id="3、分支结构（选择结构）"><a href="#3、分支结构（选择结构）" class="headerlink" title="3、分支结构（选择结构）"></a>3、分支结构（选择结构）</h3></li>
+<li><p>for-in 语句<br>枚举对象。每个对象都应该有值，如果没有值，ECMAScript 5 版本不再执行该循环体，更早的版本会抛出错误</p>
+<h3 id="3、分支结构（选择结构）"><a href="#3、分支结构（选择结构）" class="headerlink" title="3、分支结构（选择结构）"></a>3、分支结构（选择结构）</h3></li>
 <li><p>if<br>条件可以是任意表达式，分支内容可以是一条语句，也可以是一个代码块（必须用花括号括起来）<br><strong>不能用 break 或者 continue 结束语句</strong></p>
 <ul>
 <li><p>单向选择</p>
@@ -193,13 +187,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(条件) &#123;分支1&#125; else &#123;分支2&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>多向选择</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(条件1) &#123;分支1&#125;</span><br><span class="line">    else if(条件2) &#123;分支2&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(条件1) &#123;分支1&#125;</span><br><span class="line">else if(条件2) &#123;分支2&#125;</span><br><span class="line">else &#123;分支3&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>switch…case</p>
 <ul>
-<li>多向选择<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch(value) &#123;</span><br><span class="line">    case value1:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">    case value2:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>多向选择<br>switch 语句的比较值用的是全等操作符，也就是说值和类型都要一致（10 与 ‘10’ 不相等）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">switch(value) &#123;</span><br><span class="line">    case value1:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">    case value2:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 共同 value 值合并处理</span><br><span class="line">switch(value) &#123;</span><br><span class="line">    case value1:</span><br><span class="line">    case value2:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br><span class="line">// 默认处理</span><br><span class="line">switch(value) &#123;</span><br><span class="line">    ...</span><br><span class="line">    default:</span><br><span class="line">        do something</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -222,7 +216,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>一起吃饭<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -313,6 +307,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/01/09/js-expression/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JS - 表达式
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/12/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Hello World</div>
@@ -358,7 +361,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 ziyan
+    		&copy; 2018 fly-wind
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -441,11 +444,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">other</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
@@ -497,6 +504,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
+              <a href="http://www.zhangxinxu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>张鑫旭</a>
+            </li>
+          
+            <li class="search-li">
               <a href="http://zengjinchao.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>超级无敌阿拉动感迷人可爱的啊超</a>
             </li>
           
@@ -508,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">星星永远不怕自己被看作流萤</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">我不告诉你就不告诉你，哈哈哈哈哈哈哈哈</div>
   	  	
     	</section>
     

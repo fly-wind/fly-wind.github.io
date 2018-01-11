@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 上天</title>
+  <title>jq-获取元素 | 上天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="上天">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
+<meta name="keywords" content="jq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jq-获取元素">
+<meta property="og:url" content="http://yoursite.com/2018/01/11/jq-getel/index.html">
 <meta property="og:site_name" content="上天">
+<meta property="og:description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
+<meta property="og:updated_time" content="2018-01-11T06:11:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上天">
+<meta name="twitter:title" content="jq-获取元素">
+<meta name="twitter:description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
   
     <link rel="alternative" href="/atom.xml" title="上天" type="application/atom+xml">
   
@@ -135,60 +140,194 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jq-getel" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/29/hello-world/" class="archive-article-date">
-  	<time datetime="2017-12-29T02:49:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      jq-获取元素
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/11/jq-getel/" class="archive-article-date">
+  	<time datetime="2018-01-11T01:43:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>根据不同的结构获取相应的元素值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot; id=&quot;baba&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaoming&quot;&gt;</span><br><span class="line">        第一代孩子</span><br><span class="line">        &lt;div id=&quot;s_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaowang&quot;&gt;</span><br><span class="line">        孩子</span><br><span class="line">        &lt;div id=&quot;ss_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li><p>获取某个类（.类名）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.parent&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取某个 id （#id名）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#baba&apos;)</span><br><span class="line">$(&apos;#s_child, #ss_child&apos;) // 获取两个元素，用逗号隔开</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取子元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#baba div&apos;) // 返回 baba 的所有后代，包括一代和二代</span><br><span class="line">$(&apos;.parent div&apos;) // 同上</span><br><span class="line">$(&apos;#baba&gt;div&apos;) // 返回第一代</span><br><span class="line">$(&apos;#baba div&apos;).eq(n) // 返回 baba 的第 n 个后代，从 0 开始，如果为 0 ，返回 xiaoming 的节点</span><br><span class="line">$(&apos;#baba div&apos;).first() // 返回 baba 的第一个后代，即 xiaoming</span><br><span class="line">$(&apos;#baba div&apos;).last() // 返回 baba 的最后一个后代，即 ss_child</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取父元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.s_child&apos;).parent()  // 获取到第二个 div</span><br><span class="line">$(&apos;.s_child&apos;).parent().parent() // 获取到第一个 div ，即 baba</span><br><span class="line">$(&apos;.s_child&apos;).closest(&apos;.parent&apos;) // 往上查找，一查到类名为 parent 的元素就停止，并返回查到的节点 baba</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取兄弟节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#xiaoming&apos;).sibling() // 返回所有兄弟节点</span><br><span class="line">$(&apos;#xiaoming&apos;).next() // 返回下一个节点，即 xiaowang</span><br><span class="line">$(&apos;#xiaowang&apos;).prev() // 返回上一个节点，即 xiaoming</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>一起吃饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jq</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/11/jq-getel/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/01/11/jq-event/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          jq-基本事件
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/09/js-expression/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS - 表达式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -211,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
