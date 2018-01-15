@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>jq-获取元素 | 上天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
+  <meta name="description" content="根据不同的结构获取相应的元素值">
 <meta name="keywords" content="jq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jq-获取元素">
 <meta property="og:url" content="http://yoursite.com/2018/01/11/jq-getel/index.html">
 <meta property="og:site_name" content="上天">
-<meta property="og:description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
-<meta property="og:updated_time" content="2018-01-11T06:11:00.000Z">
+<meta property="og:description" content="根据不同的结构获取相应的元素值">
+<meta property="og:updated_time" content="2018-01-15T04:26:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jq-获取元素">
-<meta name="twitter:description" content="根据不同的结构获取相应的元素值 12345678910&amp;lt;div class=&amp;quot;parent&amp;quot; id=&amp;quot;baba&amp;quot;&amp;gt;    &amp;lt;div class=&amp;quot;child&amp;quot; id=&amp;quot;xiaoming&amp;quot;&amp;gt;        第一代孩子        &amp;lt;div id=&amp;quot;s_child&amp;quot;&amp;gt">
+<meta name="twitter:description" content="根据不同的结构获取相应的元素值">
   
     <link rel="alternative" href="/atom.xml" title="上天" type="application/atom+xml">
   
@@ -160,9 +160,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>根据不同的结构获取相应的元素值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot; id=&quot;baba&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaoming&quot;&gt;</span><br><span class="line">        第一代孩子</span><br><span class="line">        &lt;div id=&quot;s_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaowang&quot;&gt;</span><br><span class="line">        孩子</span><br><span class="line">        &lt;div id=&quot;ss_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+        <p>根据不同的结构获取相应的元素值<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot; id=&quot;baba&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaoming&quot;&gt;</span><br><span class="line">        第一代孩子</span><br><span class="line">        &lt;div id=&quot;s_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaowang&quot;&gt;</span><br><span class="line">        孩子</span><br><span class="line">        &lt;div id=&quot;ss_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>获取某个类（.类名）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.parent&apos;)</span><br></pre></td></tr></table></figure>
@@ -287,7 +285,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          jq-基本事件
+          jq - 基本事件
         
       </div>
     </a>
@@ -420,11 +418,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
