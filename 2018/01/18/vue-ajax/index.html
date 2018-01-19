@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: js | 上天</title>
+  <title>nginx 代理 vue 项目服务器接口 | 上天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="上天">
-<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+  <meta name="description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx 代理 vue 项目服务器接口">
+<meta property="og:url" content="http://yoursite.com/2018/01/18/vue-ajax/index.html">
 <meta property="og:site_name" content="上天">
+<meta property="og:description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+<meta property="og:image" content="http://yoursite.com/assets/img/20180118-233504@2x.png">
+<meta property="og:updated_time" content="2018-01-18T15:39:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="上天">
+<meta name="twitter:title" content="nginx 代理 vue 项目服务器接口">
+<meta name="twitter:description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20180118-233504@2x.png">
   
     <link rel="alternative" href="/atom.xml" title="上天" type="application/atom+xml">
   
@@ -135,136 +142,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-ajax" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nginx 代理 vue 项目服务器接口
+    </h1>
+  
+
+        
+        <a href="/2018/01/18/vue-ajax/" class="archive-article-date">
+  	<time datetime="2018-01-18T14:37:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。<br>要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-resource --save</span><br></pre></td></tr></table></figure></p>
+<p>在 main.js 中加入以下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import VueResource from &apos;vue-resource&apos;</span><br><span class="line">Vue.use(VueResource)</span><br></pre></td></tr></table></figure></p>
+<p>接下来就使用 vue-resource 封装的方法去请求，以下给的是一个 GET 的请求例子<br>假设你要请求的是非本地的服务器数据，某个请求接口地址为 <a href="http://fuwuqi/login/" target="_blank" rel="noopener">http://fuwuqi/login/</a> ，后面 params 接的是参数，请求的方式为如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$http.get(&apos;http://fuwuqi/login/&apos;, &#123;params: &#123;username: username&#125;&#125;)</span><br><span class="line">	.then(response =&gt; &#123;</span><br><span class="line">	  // 这里是成功之后的处理</span><br><span class="line">	&#125;, response =&gt; &#123;</span><br><span class="line">	  // 这里是失败之后的处理</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>但是，大家会发现出错了，根据提示 <font color="red">Access-Control-Allow-Origin</font> ，我们发现这是一个跨域的问题，解决的方案是做代理处理。利用一个本地服务器的环境，此处以 nginx 为例，修改 nginx 的配置代理远程服务器。 <a href="http://127.0.0.1:8081/" target="_blank" rel="noopener">http://127.0.0.1:8081/</a> 是 vue 项目运行的地址，指定 /new/ 之后，就可以通过 <code>localhost:8080/new/</code> 来访问 vue 的项目（nginx的端口号是8080）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">location /new/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8081/;</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">    proxy_read_timeout 43200000;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header Host $http_host;</span><br><span class="line">    proxy_set_header X-NginX-Proxy true;</span><br><span class="line">    proxy_buffering off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另外，还需要同样配置不同访问地址来指定服务器的地址。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">location /api/ &#123;</span><br><span class="line">    proxy_pass http://fuwuqi/;</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">    proxy_read_timeout 43200000;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header Host $http_host;</span><br><span class="line">    proxy_set_header X-NginX-Proxy true;</span><br><span class="line">    proxy_buffering off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>到了这一步，我们就可以通过 /api/ 代替远程服务器的地址，连接接口，修改上面请求的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$http.get(&apos;/api/login/&apos;, &#123;params: &#123;username: username&#125;&#125;)</span><br><span class="line">	.then(response =&gt; &#123;</span><br><span class="line">	  // 这里是成功之后的处理</span><br><span class="line">	&#125;, response =&gt; &#123;</span><br><span class="line">	  // 这里是失败之后的处理</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>到了这一步基本就没什么问题了。<br>如果修改了 nginx 的配置后，通过访问 nginx 的地址（如 localhost:8080/new/）显示空白页，并出现提示 <font color="red">app.js 有误</font>，如下图：<br><img src="/assets/img/20180118-233504@2x.png" alt="alt text"><br>实际上是因为在编译项目的时候，路径出现了问题，把 vue 项目中的 config/index.js 修改以下代码，就是把 assetsPublicPath 的 ‘/‘ 去掉，然后 <code>npm run dev</code> 重启 vue 项目就能读到项目的文件了，具体原因，有待研究。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dev: &#123;</span><br><span class="line">    // Paths</span><br><span class="line">    assetsSubDirectory: &apos;static&apos;,</span><br><span class="line">    assetsPublicPath: &apos;&apos;,</span><br><span class="line">    proxyTable: &#123;&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>我遇到的另一个问题就是，没有了跨域问题，但是一直返回 400 错误，最后发现是 api 连接路径还不完全正确，就是后面的 ‘/api/login/‘ 我漏了最后面的反斜杠，所以有时候，细节很重要，一点点差异都有可能导致失败。</p>
+<p>附上 HTTP 的参考文档<br><a href="https://github.com/pagekit/vue-resource/blob/HEAD/docs/http.md" target="_blank" rel="noopener">https://github.com/pagekit/vue-resource/blob/HEAD/docs/http.md</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>一起吃饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/15/js-operator/" class="archive-article-date">
-  	<time datetime="2018-01-15T04:28:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/15/js-operator/">JS - 运算符</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+      <span id="busuanzi_container_page_pv">
+        | 阅读量(<span id="busuanzi_value_page_pv"></span>)
+      </span>
+      
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/18/vue-ajax/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/09/js-expression/" class="archive-article-date">
-  	<time datetime="2018-01-09T02:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/15/js-operator/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS - 运算符</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/09/js-expression/">JS - 表达式</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/08/js-basicpro/" class="archive-article-date">
-  	<time datetime="2018-01-08T03:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/js-basicpro/">JS - 基础程序结构</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -296,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
