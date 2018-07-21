@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js - 表达式 | 飞天</title>
+  <title>js - 性能优化 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
-<meta name="keywords" content="js">
+  <meta name="description" content="始终坚持只要能在构建时完成的，不要留在运行时做。文章内容主要是针对 js 部分的性能优化，分别从加载、数据存取、DOM渲染、算法、AJAX方面来介绍常见的优化方式。概括性来说就是加快响应速度，为此应尽可能地减少请求，精简内容。另外合理利用性能分析工具，针对性地找出能进行优化的部分。">
+<meta name="keywords" content="js,性能优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js - 表达式">
-<meta property="og:url" content="http://yoursite.com/2018/01/09/js-expression/index.html">
+<meta property="og:title" content="js - 性能优化">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/js-performance/index.html">
 <meta property="og:site_name" content="飞天">
-<meta property="og:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
-<meta property="og:updated_time" content="2018-07-21T10:33:35.983Z">
+<meta property="og:description" content="始终坚持只要能在构建时完成的，不要留在运行时做。文章内容主要是针对 js 部分的性能优化，分别从加载、数据存取、DOM渲染、算法、AJAX方面来介绍常见的优化方式。概括性来说就是加快响应速度，为此应尽可能地减少请求，精简内容。另外合理利用性能分析工具，针对性地找出能进行优化的部分。">
+<meta property="og:updated_time" content="2018-07-21T16:46:49.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js - 表达式">
-<meta name="twitter:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
+<meta name="twitter:title" content="js - 性能优化">
+<meta name="twitter:description" content="始终坚持只要能在构建时完成的，不要留在运行时做。文章内容主要是针对 js 部分的性能优化，分别从加载、数据存取、DOM渲染、算法、AJAX方面来介绍常见的优化方式。概括性来说就是加快响应速度，为此应尽可能地减少请求，精简内容。另外合理利用性能分析工具，针对性地找出能进行优化的部分。">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
   
@@ -140,72 +140,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-expression" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js-performance" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js - 表达式
+      js - 性能优化
     </h1>
   
 
         
-        <a href="/2018/01/09/js-expression/" class="archive-article-date">
-  	<time datetime="2018-01-09T02:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
+        <a href="/2018/07/20/js-performance/" class="archive-article-date">
+  	<time datetime="2018-07-20T14:49:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解释器根据表达式计算出结果。</p>
-<h3 id="原始表达式"><a href="#原始表达式" class="headerlink" title="原始表达式"></a>原始表达式</h3><ul>
-<li>常量<br>数值（123），字符串（’abc’），正则表达式（/pattern/）</li>
+        <p>始终坚持<strong>只要能在构建时完成的，不要留在运行时做</strong>。<br>文章内容主要是针对 js 部分的性能优化，分别从加载、数据存取、DOM渲染、算法、AJAX方面来介绍常见的优化方式。概括性来说就是加快响应速度，为此应尽可能地减少请求，精简内容。另外合理利用性能分析工具，针对性地找出能进行优化的部分。<br><a id="more"></a></p>
+<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><ul>
+<li>script 脚本文件放在 body 底部。<ul>
+<li>脚本在解析时是逐个文件先下载后解析，放在头部会导致解析页面堵塞。</li>
 </ul>
-<a id="more"></a>
+</li>
+<li>尽量少使用 script 标签。<ul>
+<li>可以减少 HTTP 请求数，比如多个脚本文件可以合并为同一个文件。</li>
+<li>把文件合并到链接，请求一个链接时再分别下载对应的文件。</li>
+</ul>
+</li>
+<li>压缩文件。Accept-Encoding 支持的格式有：gzip, compress, deflate, identify<ul>
+<li></li>
+<li>GZip 压缩（只能压缩文本文件）。</li>
+<li>smasher（使用PHP写成的一个小工具）</li>
+<li>压缩 js 文件。<ol>
+<li>JSMin</li>
+<li>YUI Compressor 实现方式：局部变量变短，对象的属性名引号去掉，中括号换为点，替换其转义字符，合并常量值。</li>
+<li>Closure Compiler 调试难</li>
+<li>Packer 运行期消耗长</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>添加 <code>defer</code> 属性。仅对 IE 和 Firefox 有效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;default.js&quot; defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态加载脚本。在需要的地方添加脚本链接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var script = document.createElement(&apos;script&apos;);</span><br><span class="line">script.type = &quot;text/javascript&quot;;</span><br><span class="line">script.src = &quot;default.js&quot;;</span><br><span class="line">document.getElementByTagName(&apos;head&apos;)[0].appendChild(script)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 XHR 对象下载文件。</p>
+</li>
+<li><p>引用 LazyLoad(1.5kb) 或 LABjs(4.5kb) 延迟加载插件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// [] 里可以放多个文件</span><br><span class="line">LazyLoad.js([&apos;default.js&apos;], function()&#123;</span><br><span class="line">	// doing something</span><br><span class="line">&#125;);</span><br><span class="line">// script() 下载对应的脚本文件；wait() 执行脚本文件后调用的函数；</span><br><span class="line">// 如要多个脚本文件，写多个 script 即可，但多个时注意 script 和 wait 的执行顺序</span><br><span class="line">$LAB.script(&apos;default&apos;)</span><br><span class="line">    .wait(function()&#123;</span><br><span class="line">    // doing something</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML5 离线引用缓存<code>manifest</code></p>
+</li>
+<li>文件加上<strong>时间戳</strong>确保应用升级时资源最新</li>
+<li>CDN（内容分发网络）</li>
+<li>避免双重求值<ul>
+<li>eval(‘arr[0]’) 比 arr[0] 慢</li>
+<li>setTimeout() 、 setInterval() 第一个参数传递函数非字符串</li>
+</ul>
+</li>
+<li>避免重复工作<ul>
+<li>延迟加载（如判断浏览器，无需每次都判断，首次判断结果覆盖当前）</li>
+<li>条件预加载（先判断后赋值到当前，适用于马上需要被加载的）</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>数据分为：直接量（字符串、数字、布尔值、数组、对象、函数、正则表达式、null、undefined），变量，对象成员（以字符串为索引），数组元素（以数字为索引）</p>
 <ul>
-<li>保留字<br>true, false, null, this…等<a href="http://www.runoob.com/js/js-reserved.html" target="_blank" rel="noopener">更多保留字</a></li>
-<li>变量<br>i; // 一个 i 变量<br>undefined 不是保留字，是全局变量<h3 id="初始化表达式"><a href="#初始化表达式" class="headerlink" title="初始化表达式"></a>初始化表达式</h3></li>
-<li>对象初始化（花括号包含元素，逗号隔开）<br>每个子表达式都包含一个属性名和一个冒号作为前缀<ul>
-<li>空对象 <code>{}</code></li>
-<li>两个元素的对象 <code>{a:1, b:2}</code></li>
-<li>嵌套对象 <code>{a:{a:1}, b:{b:2}}</code></li>
+<li>直接量与变量 比 对象成员与数组元素 要快，其中，局部变量 比 全局变量要快。因此定义一个对象、数组时直接赋值可以加快解析速度。</li>
+<li>点表示法与括号表示法：在 <strong>Safari</strong> 中点表示法更快，其他浏览器无太大差别。</li>
+<li>with 和 try-catch：改变改变运行期上下文作用域链，从而改变不同变量的访问速度。</li>
+</ul>
+<h3 id="DOM-渲染"><a href="#DOM-渲染" class="headerlink" title="DOM 渲染"></a>DOM 渲染</h3><ul>
+<li>减少访问 DOM 的次数</li>
+<li>innerHTML 与 原生 DOM(createElement)<ul>
+<li>webkit 内核浏览器中<strong>原生DOM</strong>快</li>
+<li>IE6 中，<strong>innerHTML</strong>快</li>
 </ul>
 </li>
-<li>数组初始化（中括号包含值，值用逗号隔开）<ul>
-<li>空数组 <code>[]</code></li>
-<li>给定起始值 <code>[1,2]</code></li>
-<li>嵌套数组，二维数组 <code>[[11,22],[33,44]]</code></li>
-<li>省略中间值，中间未给定的值结果为 undefined <code>[1,,,,2]</code></li>
+<li>访问集合元素（针对循环体里集合遍历次数多）<ul>
+<li>在循环体外存储集合长度</li>
+<li>在循环体外拷贝集合元素为数组</li>
+<li>把集合元素事先定义为局部变量</li>
 </ul>
 </li>
-</ul>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>函数表达式与函数声明有所不同。<br>函数表达式要先定义才能使用，这样的函数也是匿名函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var say = function() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">say();</span><br></pre></td></tr></table></figure></p>
-<p>函数声明的函数可以直接调用，在代码执行之前就会读取函数的声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">say();</span><br><span class="line">function say() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="对象创建表达式"><a href="#对象创建表达式" class="headerlink" title="对象创建表达式"></a>对象创建表达式</h3><ul>
-<li><p>内置构造函数创建对象，括号里可以传入不同的参数（数值，字符串，布尔值）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字面量创建对象。当参数不稳定时，建议使用字面量来创建对象（原因不详）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自定义构造函数创建对象<br>如果没有指定的 return 对象，默认 return this，不需要明写，返回的必须是对象，如果不是，返回值将会被忽略，跟默认返回一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person = function (name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  // return this;</span><br><span class="line">&#125;;</span><br><span class="line">var obj = new Person(&apos;zhu&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure>
-<p>自定义构造函数看起来跟普通函数一样，如果在创建对象时，没有使用 new 就直接调用了，虽然没有报错，却也得不到自己要的结果，因为此时构造函数里的 this 指向的是全局的 window 对象，使用 window.xxx 即可查看到相应的值。<br>顺便提一下，数组的创建，可以通过 new Array() 或者字面量来创建，一般采取字面量来创建，方便简洁，并且不容易出错。注意的一点是 Array() 参数为 <strong>一个数值</strong> 时，代表的是数组的长度，字面量可以直接赋予第一个的值，这也意味着如果 Array() 参数传递的是一个浮点型的值，将会出错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(2);</span><br><span class="line">console.log(arr[0]) // undefined</span><br><span class="line">var arr = [2];</span><br><span class="line">console.log(arr[0]) // 2</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="属性访问表达式"><a href="#属性访问表达式" class="headerlink" title="属性访问表达式"></a>属性访问表达式</h3><p>点号表示法只适用于当访问的属性名称是合法的标识符且知道要访问的属性名字时，如果属性名是通过求值得到、或包含空格、或为数值、或为保留字，此时应该使用方括号表示法</p>
+<li><p>重排（reflow）和重绘（repaint）</p>
 <ul>
-<li><p>点号表示法，点号后面不能接数字 <code>obj.x</code><br>如果对数字字面量使用该方法，且数字没有小数点没有指数，应在点号之前留个空格，避免后面的方法被认为是小数点的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1 .x</span><br><span class="line">// 1..x</span><br><span class="line">// 1.0.x</span><br><span class="line">// (1).x</span><br><span class="line">// 1</span><br><span class="line">.x</span><br></pre></td></tr></table></figure>
+<li>产生原因有以下可能性：<blockquote>
+<p>添加或者删除 DOM<br>改变元素位置、大小、内容<br>改变浏览器窗口大小<br>渲染器初始化</p>
+</blockquote>
 </li>
-<li><p>方括号表示法 <code>obj[&#39;x&#39;]</code></p>
-<h3 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h3><p>f(x)</p>
+<li><p>尽可能减少重排或重绘次数</p>
+<ol>
+<li>改变元素时，尽可能所有改变一次性处理，因为如果在改变的过程中再执行查询就会更新当前的所有数据，导致重排或重绘；或者为这些改变合并为一个类，通过控制类名达到改变效果。</li>
+<li><p>隐藏元素-&gt;修改元素-&gt;重现元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">el.style.display(&apos;none&apos;);</span><br><span class="line">update();</span><br><span class="line">el.style.display(&apos;block&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建文档片段(createDocumentFragment)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fragment = document.createDocumentFragment();</span><br><span class="line">update();</span><br><span class="line">el.appendChild(fragment);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制当前节点-&gt;修改元素-&gt;新节点替换旧节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// cloneNode 参数：true 复制自身以及递归复制当前节点的所有子孙节点；false 只复制当前节点</span><br><span class="line">var clone = el.cloneNode(true);</span><br><span class="line">update();</span><br><span class="line">old.parentNode.replaceChild(clone, old);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>offset、scroll、computed 减少对这三个相关的获取次数</p>
+</li>
+<li>对于动画布局为脱离文档流。</li>
+<li>事件委托（*）</li>
+</ol>
 </li>
 </ul>
+</li>
+</ul>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul>
+<li>减少迭代工作量（倒序循环）</li>
+<li><p>减少迭代次数（达夫设备：每次迭代最多赋值 8 个值，使用while 或 switch 来实现）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 执行 n 次，每次调用 8 次函数</span><br><span class="line">var n = Math.floor(arr.length/8)</span><br><span class="line">// 执行 1 次 调用 m 次函数</span><br><span class="line">var m = arr.length%8</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>if-else</p>
+<ul>
+<li>最有可能成立的条件放在首位</li>
+<li>减少判断次数，条件间可以嵌套 <strong>if(…){ if(…){} }</strong></li>
+<li>运行速度：查找表 &gt; switch &gt; if-else</li>
+</ul>
+</li>
+<li>合并排序</li>
+<li>迭代取代递归</li>
+<li>Memoization，适用于递归场景，把计算中的结果保存下来，比如计算 6!, 在函数计算体里，保存 5!、4!、3!…的计算结果。</li>
+<li>位操作<ul>
+<li>与<strong>&amp;</strong>  都为 1 的时候为 true</li>
+<li>或<strong>|</strong>  只要有 1 个 1 都为 true</li>
+<li>异或<strong>^</strong> 只有 1 个 1 时为 true</li>
+<li>取反<strong>~</strong> 遇 0 即为 true</li>
+<li>左移<strong>&lt;&lt;</strong></li>
+<li>右移<strong>&gt;&gt;</strong></li>
+</ul>
+</li>
+<li>使用原生方法 <code>Math.PI</code> <code>Math.abs()</code>等</li>
+</ul>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>正则匹配步骤：<br>1、创建一个正则对象<br>2、找到匹配起始位置<br>3、匹配每个字元，如果失败了，回到起始位置重新尝试其他的可能性<br>4、匹配一轮失败，回到起始位置，从下一个字符开始作为起始位置继续匹配，直到所有的字符都匹配一次，或者匹配到正确的，才会结束。</p>
+<ul>
+<li>IE8 以前，+= 比 = … + … 快</li>
+<li>IE7 以前，数组项合并(join)更快</li>
+</ul>
+<h3 id="响应接口和-AJAX"><a href="#响应接口和-AJAX" class="headerlink" title="响应接口和 AJAX"></a>响应接口和 AJAX</h3><ul>
+<li>JS 文件执行不应超过 <strong>100ms</strong></li>
+<li>定时器延时建议最小值为 <strong>25ms</strong></li>
+<li>start = +new Date() 加号 + 可以将 Date 对象转换为数字</li>
+<li>Web Workers</li>
+<li>请求数据方式：<ul>
+<li>XMLHTTPRequest(XHR)</li>
+<li>Dynamic script tag insertion 动态脚本标签插入。不能通过请求发送信息头，参数只能通过 GET。</li>
+<li>iframes(少用)</li>
+<li>Comet(少用)</li>
+<li>Multipart XHR(MXHR) 使用流功能：当 readyState 为 3 时进行操作，可以减少请求数，但不能缓存接收到的响应。</li>
+<li>Beacons 信标。适用于不需要或者需少量回馈时，发送大量数据到服务器</li>
+</ul>
+</li>
+<li>数据格式<ul>
+<li><strong>JSON</strong> 轻量级、解析快。解析 json 方式：eval(‘(‘ + text + ‘)’)，SON.parse(text)</li>
+<li><strong>JSONP</strong> 当涉及敏感数据时，应避用JSONP。</li>
+<li><strong>字符分隔自定义格式</strong> 十分轻量、解析大数据非常快，但服务端要构造，客户端也要解析这种构造。</li>
+<li><strong>XML</strong> 广泛应用、支持良好。笨重、解析缓慢。</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h3><ul>
+<li>Apache Ant：基于 Java 的一个自动构建软件的工具</li>
+<li>Rake：基于 Ruby</li>
+<li>make：基于 Shell，针对 unix 固定系统</li>
+<li>预处理 js 文件（cpp）</li>
+<li>YUI Profiler：性能分析工具</li>
+</ul>
+<h3 id="各浏览器渲染引擎"><a href="#各浏览器渲染引擎" class="headerlink" title="各浏览器渲染引擎"></a>各浏览器渲染引擎</h3><table>
+<thead>
+<tr>
+<th>-</th>
+<th>DOM渲染</th>
+<th>JS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome</td>
+<td>Webkit-WebCore</td>
+<td>V8</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Webkit-WebCore</td>
+<td>SquirrelFish</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Gecko</td>
+<td>JagerMonkey</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -241,6 +377,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
         		</li>
       		
 		</ul>
@@ -301,7 +441,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/js-expression/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/20/js-performance/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +455,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/11/jq-getel/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/21/js-question/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          jq - 获取元素
+          JS - 综合常见问题
         
       </div>
     </a>
   
   
-    <a href="/2018/01/08/js-basicpro/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js - 基础程序结构</div>
+    <a href="/2018/02/28/vue-tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue - 全局提示框</div>
       <i class="icon-circle-right"></i>
     </a>
   

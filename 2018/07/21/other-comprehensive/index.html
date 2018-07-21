@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js - 表达式 | 飞天</title>
+  <title>前端综合问题 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
-<meta name="keywords" content="js">
+  <meta name="description" content="本文涉及的方面比较广泛，html、css、网络都有，大多数都为常见问题。">
+<meta name="keywords" content="other">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js - 表达式">
-<meta property="og:url" content="http://yoursite.com/2018/01/09/js-expression/index.html">
+<meta property="og:title" content="前端综合问题">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/other-comprehensive/index.html">
 <meta property="og:site_name" content="飞天">
-<meta property="og:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
-<meta property="og:updated_time" content="2018-07-21T10:33:35.983Z">
+<meta property="og:description" content="本文涉及的方面比较广泛，html、css、网络都有，大多数都为常见问题。">
+<meta property="og:updated_time" content="2018-07-21T16:50:15.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js - 表达式">
-<meta name="twitter:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
+<meta name="twitter:title" content="前端综合问题">
+<meta name="twitter:description" content="本文涉及的方面比较广泛，html、css、网络都有，大多数都为常见问题。">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
   
@@ -140,73 +140,127 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-expression" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-other-comprehensive" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js - 表达式
+      前端综合问题
     </h1>
   
 
         
-        <a href="/2018/01/09/js-expression/" class="archive-article-date">
-  	<time datetime="2018-01-09T02:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
+        <a href="/2018/07/21/other-comprehensive/" class="archive-article-date">
+  	<time datetime="2018-07-21T15:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解释器根据表达式计算出结果。</p>
-<h3 id="原始表达式"><a href="#原始表达式" class="headerlink" title="原始表达式"></a>原始表达式</h3><ul>
-<li>常量<br>数值（123），字符串（’abc’），正则表达式（/pattern/）</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>保留字<br>true, false, null, this…等<a href="http://www.runoob.com/js/js-reserved.html" target="_blank" rel="noopener">更多保留字</a></li>
-<li>变量<br>i; // 一个 i 变量<br>undefined 不是保留字，是全局变量<h3 id="初始化表达式"><a href="#初始化表达式" class="headerlink" title="初始化表达式"></a>初始化表达式</h3></li>
-<li>对象初始化（花括号包含元素，逗号隔开）<br>每个子表达式都包含一个属性名和一个冒号作为前缀<ul>
-<li>空对象 <code>{}</code></li>
-<li>两个元素的对象 <code>{a:1, b:2}</code></li>
-<li>嵌套对象 <code>{a:{a:1}, b:{b:2}}</code></li>
-</ul>
-</li>
-<li>数组初始化（中括号包含值，值用逗号隔开）<ul>
-<li>空数组 <code>[]</code></li>
-<li>给定起始值 <code>[1,2]</code></li>
-<li>嵌套数组，二维数组 <code>[[11,22],[33,44]]</code></li>
-<li>省略中间值，中间未给定的值结果为 undefined <code>[1,,,,2]</code></li>
-</ul>
+        <p>本文涉及的方面比较广泛，html、css、网络都有，大多数都为常见问题。<br><a id="more"></a></p>
+<h5 id="访问一个url都有哪些过程"><a href="#访问一个url都有哪些过程" class="headerlink" title="访问一个url都有哪些过程"></a>访问一个url都有哪些过程</h5><ul>
+<li>DNS 查询</li>
+<li>TCP 握手、TLS 握手</li>
+<li>HTTP请求</li>
+<li>服务器处理请求</li>
+<li>浏览器渲染<ol>
+<li>解析 DOM 结构，生成 DOM 树</li>
+<li>生成 render 树 （DOM + CSSOM）</li>
+<li>布局 render 树</li>
+<li>展示 render 树</li>
+</ol>
 </li>
 </ul>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>函数表达式与函数声明有所不同。<br>函数表达式要先定义才能使用，这样的函数也是匿名函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var say = function() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">say();</span><br></pre></td></tr></table></figure></p>
-<p>函数声明的函数可以直接调用，在代码执行之前就会读取函数的声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">say();</span><br><span class="line">function say() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="对象创建表达式"><a href="#对象创建表达式" class="headerlink" title="对象创建表达式"></a>对象创建表达式</h3><ul>
-<li><p>内置构造函数创建对象，括号里可以传入不同的参数（数值，字符串，布尔值）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字面量创建对象。当参数不稳定时，建议使用字面量来创建对象（原因不详）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自定义构造函数创建对象<br>如果没有指定的 return 对象，默认 return this，不需要明写，返回的必须是对象，如果不是，返回值将会被忽略，跟默认返回一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person = function (name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  // return this;</span><br><span class="line">&#125;;</span><br><span class="line">var obj = new Person(&apos;zhu&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure>
-<p>自定义构造函数看起来跟普通函数一样，如果在创建对象时，没有使用 new 就直接调用了，虽然没有报错，却也得不到自己要的结果，因为此时构造函数里的 this 指向的是全局的 window 对象，使用 window.xxx 即可查看到相应的值。<br>顺便提一下，数组的创建，可以通过 new Array() 或者字面量来创建，一般采取字面量来创建，方便简洁，并且不容易出错。注意的一点是 Array() 参数为 <strong>一个数值</strong> 时，代表的是数组的长度，字面量可以直接赋予第一个的值，这也意味着如果 Array() 参数传递的是一个浮点型的值，将会出错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(2);</span><br><span class="line">console.log(arr[0]) // undefined</span><br><span class="line">var arr = [2];</span><br><span class="line">console.log(arr[0]) // 2</span><br></pre></td></tr></table></figure>
+<h5 id="Url的组成部分"><a href="#Url的组成部分" class="headerlink" title="Url的组成部分"></a>Url的组成部分</h5><ul>
+<li>协议 + 域名 + 资源路径 + 参数</li>
+</ul>
+<h5 id="Tcp网络"><a href="#Tcp网络" class="headerlink" title="Tcp网络"></a>Tcp网络</h5><ul>
+<li>组成部分：网络接口层、网络层、传输层、应用层</li>
+<li>三次握手<ol>
+<li>第一次握手：客户端发送 syn 包(syn=j)到服务器。</li>
+<li>第二次握手：服务器收到 syn 包，必须确认客户的 SYN（ack=j+1），同时自己也发送一个 ASK 包（ask=k）。</li>
+<li>第三次握手：客户端收到服务器的 SYN＋ACK 包，向服务器发送确认包 ACK(ack=k+1)。</li>
+</ol>
 </li>
 </ul>
-<h3 id="属性访问表达式"><a href="#属性访问表达式" class="headerlink" title="属性访问表达式"></a>属性访问表达式</h3><p>点号表示法只适用于当访问的属性名称是合法的标识符且知道要访问的属性名字时，如果属性名是通过求值得到、或包含空格、或为数值、或为保留字，此时应该使用方括号表示法</p>
-<ul>
-<li><p>点号表示法，点号后面不能接数字 <code>obj.x</code><br>如果对数字字面量使用该方法，且数字没有小数点没有指数，应在点号之前留个空格，避免后面的方法被认为是小数点的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1 .x</span><br><span class="line">// 1..x</span><br><span class="line">// 1.0.x</span><br><span class="line">// (1).x</span><br><span class="line">// 1</span><br><span class="line">.x</span><br></pre></td></tr></table></figure>
+<h5 id="安全性能"><a href="#安全性能" class="headerlink" title="安全性能"></a>安全性能</h5><ul>
+<li>CSRF(Cross-site request forgery) 跨站请求伪造<ul>
+<li>原理：网站 B 通过让已登录的网站 A 访问带有攻击的链接，从而模拟网站 A 发送请求</li>
+<li>防御方式：Token 验证、Referer 验证（服务器只接收本站的请求）</li>
+</ul>
 </li>
-<li><p>方括号表示法 <code>obj[&#39;x&#39;]</code></p>
-<h3 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h3><p>f(x)</p>
+<li>XSS(Cross Site Scripting) 跨域脚本攻击<ul>
+<li>原理：无需登录，通过合法的输入，往网站里注入脚本</li>
+<li>防御方式：HTML Entity 编码；过滤输入的信息（和事件相关的属性，如onclick类，script节点，iframe节点）</li>
+</ul>
 </li>
 </ul>
-
+<h5 id="h5都有哪些新特性"><a href="#h5都有哪些新特性" class="headerlink" title="h5都有哪些新特性"></a>h5都有哪些新特性</h5><ul>
+<li>语义化标签 header、footer、section等</li>
+<li>canvas</li>
+<li>localStorage 和 sessionStorage</li>
+</ul>
+<h5 id="本地缓存的各种方式以及区别"><a href="#本地缓存的各种方式以及区别" class="headerlink" title="本地缓存的各种方式以及区别"></a>本地缓存的各种方式以及区别</h5><ul>
+<li>session 通常用于服务端存储</li>
+<li>cookie 有有效期，不设置有效期默认关闭页面清空数据</li>
+<li>localStorage 永久保存，除非清除浏览器的缓存</li>
+<li>sessionStorage 临时保存当前会话的数据，关闭窗口后清空数据</li>
+</ul>
+<h5 id="ajax的实现机制"><a href="#ajax的实现机制" class="headerlink" title="ajax的实现机制"></a>ajax的实现机制</h5><ul>
+<li>XMLHTTPRequest(XHR)<ol>
+<li>新建一个 XHR 对象</li>
+<li>使用 open 设置请求的参数。open(method, url, 是否异步)</li>
+<li>发送请求</li>
+<li>注册 onreadystatechange 事件</li>
+<li>获取返回的数据</li>
+</ol>
+</li>
+</ul>
+<h5 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h5><ul>
+<li>JSONP 通过 script 标签的异步加载实现。</li>
+<li>WebSocket</li>
+<li>CORS 跨域时，浏览器会拦截 Ajax 的请求，并在 http 头中加 Origin。</li>
+<li>Hash 地址栏的 url 后的 # 就是 hash，hash改变页面不会刷新</li>
+<li>postMessage</li>
+</ul>
+<h5 id="5个海盗平分一百个金币，第一个人做策略，如果有一半人以上投票否决，那个人就会被丢进海里，那么他应该做出什么样的策略"><a href="#5个海盗平分一百个金币，第一个人做策略，如果有一半人以上投票否决，那个人就会被丢进海里，那么他应该做出什么样的策略" class="headerlink" title="5个海盗平分一百个金币，第一个人做策略，如果有一半人以上投票否决，那个人就会被丢进海里，那么他应该做出什么样的策略"></a>5个海盗平分一百个金币，第一个人做策略，如果有一半人以上投票否决，那个人就会被丢进海里，那么他应该做出什么样的策略</h5><ul>
+<li>思路： 至少要有 3 个人投决定票，那就是要拉 2 票。</li>
+</ul>
+<h5 id="常用的打包工具"><a href="#常用的打包工具" class="headerlink" title="常用的打包工具"></a>常用的打包工具</h5><ul>
+<li>webpack</li>
+<li>parcel</li>
+</ul>
+<h5 id="垂直居中怎么实现的"><a href="#垂直居中怎么实现的" class="headerlink" title="垂直居中怎么实现的"></a>垂直居中怎么实现的</h5><ul>
+<li><p>fixed </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">position: fixed;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 40px;</span><br><span class="line">left: 0;</span><br><span class="line">right: 0;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>absolute，父元素宽高要固定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> position: absolute;</span><br><span class="line"> top: 50%;</span><br><span class="line"> transform: translateY(-50%);</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line"> position: absolute;</span><br><span class="line"> margin: auto;</span><br><span class="line"> top: 0;</span><br><span class="line"> bottom: 0;</span><br><span class="line"> width: 50px;</span><br><span class="line"> height: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>flex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">display: flex;</span><br><span class="line">height: 100%;</span><br><span class="line">justify-content: center;</span><br><span class="line">align-items: center;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="position四个定位的区别"><a href="#position四个定位的区别" class="headerlink" title="position四个定位的区别"></a>position四个定位的区别</h5><ul>
+<li>relative 相对定位。相对于其他正常的元素去定位</li>
+<li>absolute 绝对定位。相对于 static 定位以外的第一个父元素进行定位。</li>
+<li>fixed 固定定位。相对于浏览器窗口定位。</li>
+<li>static 没有定位。默认值</li>
+</ul>
+<h5 id="inline和inline-block的区别"><a href="#inline和inline-block的区别" class="headerlink" title="inline和inline-block的区别"></a>inline和inline-block的区别</h5><ul>
+<li>inline 宽度与自身内容同宽；不会占据一行；不能设置宽高值；margin、padding水平方向的设置有效，垂直方向的无效</li>
+<li>inline-block 具备 inline 的同行特性 和 block 的宽高特性，不占据一行，可以设置宽高值、margin、padding</li>
+</ul>
+<h5 id="三列布局，左右两块固定宽度，中间宽度占据剩余的空间，都有哪些实现方式"><a href="#三列布局，左右两块固定宽度，中间宽度占据剩余的空间，都有哪些实现方式" class="headerlink" title="三列布局，左右两块固定宽度，中间宽度占据剩余的空间，都有哪些实现方式"></a>三列布局，左右两块固定宽度，中间宽度占据剩余的空间，都有哪些实现方式</h5><ul>
+<li>flex 左右两边<code>flex: 0 0 100px;</code>，中间<code>flex: 1</code></li>
+<li>float 左右两边浮动，设置固定宽度，中间<code>margin-left: 100px; margin-right: 100px;</code></li>
+<li>absolute 跟 float 一样的逻辑，用 left 和 right 来控制</li>
+</ul>
+<h5 id="样式的优先级"><a href="#样式的优先级" class="headerlink" title="样式的优先级"></a>样式的优先级</h5><p>!important &gt; 内联 &gt; id &gt; class = 属性 = 伪类(:hover) &gt; 标签 = 伪元素(::before)</p>
+<h5 id="ws如何知道接收到的信息来自于哪个发送请求"><a href="#ws如何知道接收到的信息来自于哪个发送请求" class="headerlink" title="ws如何知道接收到的信息来自于哪个发送请求"></a>ws如何知道接收到的信息来自于哪个发送请求</h5><h5 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h5><h5 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h5>
       
 
       
@@ -240,7 +294,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
         		</li>
       		
 		</ul>
@@ -301,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/js-expression/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/21/other-comprehensive/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +369,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/11/jq-getel/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          jq - 获取元素
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/08/js-basicpro/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js - 基础程序结构</div>
+    <a href="/2018/07/21/js-question/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS - 综合常见问题</div>
       <i class="icon-circle-right"></i>
     </a>
   

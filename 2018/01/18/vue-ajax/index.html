@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>nginx 代理 vue 项目服务器接口 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+  <meta name="description" content="vue 使用 ajax 与后端交互时，需要连接 api，与传统的 ajax 不一样，要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx 代理 vue 项目服务器接口">
 <meta property="og:url" content="http://yoursite.com/2018/01/18/vue-ajax/index.html">
 <meta property="og:site_name" content="飞天">
-<meta property="og:description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+<meta property="og:description" content="vue 使用 ajax 与后端交互时，需要连接 api，与传统的 ajax 不一样，要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
 <meta property="og:image" content="http://yoursite.com/assets/img/20180118-233504@2x.png">
-<meta property="og:updated_time" content="2018-01-18T15:39:00.000Z">
+<meta property="og:updated_time" content="2018-07-21T07:00:02.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx 代理 vue 项目服务器接口">
-<meta name="twitter:description" content="vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
+<meta name="twitter:description" content="vue 使用 ajax 与后端交互时，需要连接 api，与传统的 ajax 不一样，要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：">
 <meta name="twitter:image" content="http://yoursite.com/assets/img/20180118-233504@2x.png">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
@@ -162,7 +162,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>vue 使用 ajax 与后端交互时，需要连接 api， 与传统的 ajax 不一样，还是要多看文档。<br>要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-resource --save</span><br></pre></td></tr></table></figure></p>
+        <p>vue 使用 ajax 与后端交互时，需要连接 api，与传统的 ajax 不一样，要想在 vue 项目中使用 ajax 请求，必须要有 vue-resource，安装命令如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-resource --save</span><br></pre></td></tr></table></figure></p>
 <p>在 main.js 中加入以下语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import VueResource from &apos;vue-resource&apos;</span><br><span class="line">Vue.use(VueResource)</span><br></pre></td></tr></table></figure></p>
 <p>接下来就使用 vue-resource 封装的方法去请求，以下给的是一个 GET 的请求例子<br>假设你要请求的是非本地的服务器数据，某个请求接口地址为 <a href="http://fuwuqi/login/" target="_blank" rel="noopener">http://fuwuqi/login/</a> ，后面 params 接的是参数，请求的方式为如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$http.get(&apos;http://fuwuqi/login/&apos;, &#123;params: &#123;username: username&#125;&#125;)</span><br><span class="line">	.then(response =&gt; &#123;</span><br><span class="line">	  // 这里是成功之后的处理</span><br><span class="line">	&#125;, response =&gt; &#123;</span><br><span class="line">	  // 这里是失败之后的处理</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>但是，大家会发现出错了，根据提示 <font color="red">Access-Control-Allow-Origin</font> ，我们发现这是一个跨域的问题，解决的方案是做代理处理。利用一个本地服务器的环境，此处以 nginx 为例，修改 nginx 的配置代理远程服务器。 <a href="http://127.0.0.1:8081/" target="_blank" rel="noopener">http://127.0.0.1:8081/</a> 是 vue 项目运行的地址，指定 /new/ 之后，就可以通过 <code>localhost:8080/new/</code> 来访问 vue 的项目（nginx的端口号是8080）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">location /new/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8081/;</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">    proxy_read_timeout 43200000;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header Host $http_host;</span><br><span class="line">    proxy_set_header X-NginX-Proxy true;</span><br><span class="line">    proxy_buffering off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -291,7 +291,7 @@
   
   
     <a href="/2018/01/15/js-operator/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS - 运算符</div>
+      <div class="article-nav-title">js - 运算符</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,6 +439,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
@@ -447,7 +451,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
              
               <li class="article-tag-list-item">
