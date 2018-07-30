@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/21/js-question/index.html">
 <meta property="og:site_name" content="飞天">
 <meta property="og:description" content="js 的一些基础知识，如对 dom 的操作，继承对象等。">
-<meta property="og:updated_time" content="2018-07-21T16:54:43.693Z">
+<meta property="og:updated_time" content="2018-07-30T14:26:49.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js - 综合常见问题">
 <meta name="twitter:description" content="js 的一些基础知识，如对 dom 的操作，继承对象等。">
@@ -175,7 +175,7 @@
 <h5 id="4、用什么方式获取元素"><a href="#4、用什么方式获取元素" class="headerlink" title="4、用什么方式获取元素"></a>4、用什么方式获取元素</h5><blockquote>
 <p><strong>ID</strong>（getElementById）<br><strong>name</strong>属性（getElementsByName）<br><strong>标签名</strong>（getElementsByTagName）<br><strong>类名</strong>（getElementsByClassName）<br>获取html（document.documentElement）<br>获取body（document.body）<br>通过选择器获取一个元素（querySelector）<br>通过选择器获取一组元素（querySelectorAll）</p>
 </blockquote>
-<h5 id="5、apply-call-bind-有什么区别"><a href="#5、apply-call-bind-有什么区别" class="headerlink" title="5、apply call bind 有什么区别"></a>5、apply call bind 有什么区别</h5><p>假如有以下两个对象，为了要 man 对象也能用到 guy 对象的值，而使用这三种方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var man = &#123;</span><br><span class="line">  name: &apos;毛头&apos;,</span><br><span class="line">  hit: function(sth, who)&#123;</span><br><span class="line">    console.log(this.name + &apos;用&apos; + this.sth + 打&apos; + this.who)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var guy = &#123;</span><br><span class="line">  name = &apos;灭霸&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="5、apply-call-bind-有什么区别"><a href="#5、apply-call-bind-有什么区别" class="headerlink" title="5、apply call bind 有什么区别"></a>5、apply call bind 有什么区别</h5><p>假如有以下两个对象，为了要 man 对象也能用到 guy 对象的值，而使用这三种方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var man = &#123;</span><br><span class="line">  name: &apos;毛头&apos;,</span><br><span class="line">  hit: function(sth, who)&#123;</span><br><span class="line">    console.log(this.name + &apos;用&apos; + sth + &apos;打&apos; + who);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var guy = &#123;</span><br><span class="line">  name: &apos;灭霸&apos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>共同点<ol>
 <li>都用来改变函数的 this 对象的指向。</li>
@@ -184,8 +184,8 @@
 </ol>
 </li>
 <li>不同点<ul>
-<li><code>man.hit.apply(guy, &#39;响指&#39;, &#39;你&#39;);</code> 后面参数个数与 hit 方法的参数个数一致。</li>
-<li><code>man.hit.call(guy, [&#39;响指&#39;, &#39;你&#39;]);</code> 后面参数为一个数组，数组里的元素个数与 hit 方法的参数个数一致。</li>
+<li><code>man.hit.call(guy, &#39;响指&#39;, &#39;你&#39;);</code> 后面参数个数与 hit 方法的参数个数一致。</li>
+<li><code>man.hit.apply(guy, [&#39;响指&#39;, &#39;你&#39;]);</code> 后面参数为一个数组，数组里的元素个数与 hit 方法的参数个数一致。</li>
 <li><code>man.hit.bind(guy)(&#39;响指&#39;, &#39;你&#39;);</code> 或者 <code>man.hit.bind(guy, &#39;面条&#39;, &#39;你&#39;)();</code> 因为bind()返回的是一个函数，所以还要再用()调用一次</li>
 </ul>
 </li>
@@ -513,15 +513,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
