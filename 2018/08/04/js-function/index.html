@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js - 表达式 | 飞天</title>
+  <title>js - 函数表达式 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
+  <meta name="description" content="遍历数组或对象的时候，一般大家首选 for 循环，但是有些时候 for 循环代码量多显得比较累赘，此时使用简短的函数表达式更为方便简洁。">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js - 表达式">
-<meta property="og:url" content="http://yoursite.com/2018/01/09/js-expression/index.html">
+<meta property="og:title" content="js - 函数表达式">
+<meta property="og:url" content="http://yoursite.com/2018/08/04/js-function/index.html">
 <meta property="og:site_name" content="飞天">
-<meta property="og:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
-<meta property="og:updated_time" content="2018-07-21T10:33:35.983Z">
+<meta property="og:description" content="遍历数组或对象的时候，一般大家首选 for 循环，但是有些时候 for 循环代码量多显得比较累赘，此时使用简短的函数表达式更为方便简洁。">
+<meta property="og:updated_time" content="2018-08-04T08:22:58.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js - 表达式">
-<meta name="twitter:description" content="解释器根据表达式计算出结果。 原始表达式 常量数值（123），字符串（’abc’），正则表达式（/pattern/）">
+<meta name="twitter:title" content="js - 函数表达式">
+<meta name="twitter:description" content="遍历数组或对象的时候，一般大家首选 for 循环，但是有些时候 for 循环代码量多显得比较累赘，此时使用简短的函数表达式更为方便简洁。">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
   
@@ -140,71 +140,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-expression" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js-function" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js - 表达式
+      js - 函数表达式
     </h1>
   
 
         
-        <a href="/2018/01/09/js-expression/" class="archive-article-date">
-  	<time datetime="2018-01-09T02:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
+        <a href="/2018/08/04/js-function/" class="archive-article-date">
+  	<time datetime="2018-08-04T06:09:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解释器根据表达式计算出结果。</p>
-<h3 id="原始表达式"><a href="#原始表达式" class="headerlink" title="原始表达式"></a>原始表达式</h3><ul>
-<li>常量<br>数值（123），字符串（’abc’），正则表达式（/pattern/）</li>
-</ul>
-<a id="more"></a>
+        <p>遍历数组或对象的时候，一般大家首选 for 循环，但是有些时候 for 循环代码量多显得比较累赘，此时使用简短的函数表达式更为方便简洁。<br><a id="more"></a><br>以下介绍一些常用的函数表达式<br><code>let arr = [1, 2, 3, 4], obj = [{id: 1}, {id: 2}, {id: 3}, {id: 4}];</code></p>
+<h5 id="arr-filter-callback-element"><a href="#arr-filter-callback-element" class="headerlink" title="arr.filter(callback(element))"></a>arr.filter(callback(element))</h5><p>过滤某元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 找出 arr 中为偶数的值</span><br><span class="line">let new_arr = arr.filter(item =&gt; item % 2 === 0);</span><br><span class="line">console.log(new_arr); // [2, 4]</span><br><span class="line">// 找出对象数组中 id 为偶数的对象</span><br><span class="line">let new_obj = obj.filter(item =&gt; item.id % 2 === 0);</span><br><span class="line">console.log(new_obj); // [&#123;id: 2&#125;, &#123;id: 4&#125;]</span><br></pre></td></tr></table></figure></p>
+<h5 id="arr-some-callback-current-index-array"><a href="#arr-some-callback-current-index-array" class="headerlink" title="arr.some(callback(current, index, array))"></a>arr.some(callback(current, index, array))</h5><p>查找是否符合条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 查找数组中是否有偶数</span><br><span class="line">let arr_result = arr.some(item =&gt; item % 2 === 0);</span><br><span class="line">console.log(arr_result); // true</span><br><span class="line">let obj_result = obj.filter(item =&gt; item.id &gt; 5);</span><br><span class="line">console.log(obj_result); // false</span><br></pre></td></tr></table></figure></p>
+<h5 id="arr-includes-searchElement-fromIndex"><a href="#arr-includes-searchElement-fromIndex" class="headerlink" title="arr.includes(searchElement, fromIndex)"></a>arr.includes(searchElement, fromIndex)</h5><p>查找是否包含某元素，但是只能用于数组的遍历，注意与 some() 的用法区分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr_result = arr.includes(2);</span><br><span class="line">console.log(arr_result); // true</span><br></pre></td></tr></table></figure></p>
+<h5 id="arr-find-callback-current-index-array"><a href="#arr-find-callback-current-index-array" class="headerlink" title="arr.find(callback(current, index, array))"></a>arr.find(callback(current, index, array))</h5><p>返回第一个符合条件的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 返回 arr 中为偶数的第一个值</span><br><span class="line">let new_arr = arr.find(item =&gt; item % 2 === 0);</span><br><span class="line">console.log(new_arr); // 2</span><br><span class="line">// 返回对象数组中 id 为偶数的第一个对象</span><br><span class="line">let new_obj = obj.filter(item =&gt; item.id % 2 === 0);</span><br><span class="line">console.log(new_obj); // &#123;id: 2&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="arr-reduce-callback-accumulator-current-index-array-initialValue"><a href="#arr-reduce-callback-accumulator-current-index-array-initialValue" class="headerlink" title="arr.reduce(callback(accumulator, current, index, array), initialValue)"></a>arr.reduce(callback(accumulator, current, index, array), initialValue)</h5><p>可以用于累加，accumulator 是上次累加回调值, initialValue 是第一次调用callback的第一个参数值，没设置默认为数组第一个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr_result = arr.reduce((prev, curr) =&gt; prev + curr );</span><br><span class="line">console.log(arr_result); // 10</span><br><span class="line">let obj_result = obj.reduce((prev, curr) =&gt; &#123;</span><br><span class="line">	return prev + curr.id</span><br><span class="line">&#125;, 0);</span><br><span class="line">console.log(obj_result); // 10</span><br></pre></td></tr></table></figure></p>
+<h5 id="arr-map-callback-current-index-array"><a href="#arr-map-callback-current-index-array" class="headerlink" title="arr.map(callback(current, index, array))"></a>arr.map(callback(current, index, array))</h5><p>遍历每个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let new_arr = arr.map(item =&gt; item * 2);</span><br><span class="line">console.log(new_arr); // [2, 4, 6, 8]</span><br><span class="line">let new_obj = obj.map(item =&gt; &#123;</span><br><span class="line">	item.id = item.id * 2;</span><br><span class="line">	return item;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(new_obj); // [&#123;id: 2&#125;, &#123;id: 4&#125;, &#123;id: 6&#125;, &#123;id: 8&#125;]</span><br></pre></td></tr></table></figure></p>
+<h5 id="区别-Map-和-Set"><a href="#区别-Map-和-Set" class="headerlink" title="区别 Map() 和 Set()"></a>区别 Map() 和 Set()</h5><p>  共同：</p>
 <ul>
-<li>保留字<br>true, false, null, this…等<a href="http://www.runoob.com/js/js-reserved.html" target="_blank" rel="noopener">更多保留字</a></li>
-<li>变量<br>i; // 一个 i 变量<br>undefined 不是保留字，是全局变量<h3 id="初始化表达式"><a href="#初始化表达式" class="headerlink" title="初始化表达式"></a>初始化表达式</h3></li>
-<li>对象初始化（花括号包含元素，逗号隔开）<br>每个子表达式都包含一个属性名和一个冒号作为前缀<ul>
-<li>空对象 <code>{}</code></li>
-<li>两个元素的对象 <code>{a:1, b:2}</code></li>
-<li>嵌套对象 <code>{a:{a:1}, b:{b:2}}</code></li>
-</ul>
+<li><p><strong>用处：都用于清除重复项；</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [2, 2, 4, 4];</span><br><span class="line">let new_arr = new Set(arr);</span><br><span class="line">console.log(new_arr); // [2, 4]</span><br></pre></td></tr></table></figure>
 </li>
-<li>数组初始化（中括号包含值，值用逗号隔开）<ul>
-<li>空数组 <code>[]</code></li>
-<li>给定起始值 <code>[1,2]</code></li>
-<li>嵌套数组，二维数组 <code>[[11,22],[33,44]]</code></li>
-<li>省略中间值，中间未给定的值结果为 undefined <code>[1,,,,2]</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>函数表达式与函数声明有所不同。<br>函数表达式要先定义才能使用，这样的函数也是匿名函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var say = function() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">say();</span><br></pre></td></tr></table></figure></p>
-<p>函数声明的函数可以直接调用，在代码执行之前就会读取函数的声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">say();</span><br><span class="line">function say() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="对象创建表达式"><a href="#对象创建表达式" class="headerlink" title="对象创建表达式"></a>对象创建表达式</h3><ul>
-<li><p>内置构造函数创建对象，括号里可以传入不同的参数（数值，字符串，布尔值）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字面量创建对象。当参数不稳定时，建议使用字面量来创建对象（原因不详）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自定义构造函数创建对象<br>如果没有指定的 return 对象，默认 return this，不需要明写，返回的必须是对象，如果不是，返回值将会被忽略，跟默认返回一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person = function (name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  // return this;</span><br><span class="line">&#125;;</span><br><span class="line">var obj = new Person(&apos;zhu&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure>
-<p>自定义构造函数看起来跟普通函数一样，如果在创建对象时，没有使用 new 就直接调用了，虽然没有报错，却也得不到自己要的结果，因为此时构造函数里的 this 指向的是全局的 window 对象，使用 window.xxx 即可查看到相应的值。<br>顺便提一下，数组的创建，可以通过 new Array() 或者字面量来创建，一般采取字面量来创建，方便简洁，并且不容易出错。注意的一点是 Array() 参数为 <strong>一个数值</strong> 时，代表的是数组的长度，字面量可以直接赋予第一个的值，这也意味着如果 Array() 参数传递的是一个浮点型的值，将会出错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(2);</span><br><span class="line">console.log(arr[0]) // undefined</span><br><span class="line">var arr = [2];</span><br><span class="line">console.log(arr[0]) // 2</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="属性访问表达式"><a href="#属性访问表达式" class="headerlink" title="属性访问表达式"></a>属性访问表达式</h3><p>点号表示法只适用于当访问的属性名称是合法的标识符且知道要访问的属性名字时，如果属性名是通过求值得到、或包含空格、或为数值、或为保留字，此时应该使用方括号表示法</p>
+<li><p><strong>遍历方法：</strong></p>
 <ul>
-<li><p>点号表示法，点号后面不能接数字 <code>obj.x</code><br>如果对数字字面量使用该方法，且数字没有小数点没有指数，应在点号之前留个空格，避免后面的方法被认为是小数点的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1 .x</span><br><span class="line">// 1..x</span><br><span class="line">// 1.0.x</span><br><span class="line">// (1).x</span><br><span class="line">// 1</span><br><span class="line">.x</span><br></pre></td></tr></table></figure>
+<li>keys()：返回一个键名的遍历器</li>
+<li>values()：返回一个键值的遍历器</li>
+<li>entries()：返回一个键值对的遍历器</li>
+<li>forEach()：使用回调函数遍历每个成员</li>
+</ul>
 </li>
-<li><p>方括号表示法 <code>obj[&#39;x&#39;]</code></p>
-<h3 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h3><p>f(x)</p>
+<li><p><strong>操作方法：</strong></p>
+<ul>
+<li>clear()：清除所有成员，没有返回值</li>
+<li>has(value)：返回一个布尔值，表示该值是否为 Set 的成员</li>
+<li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
+</ul>
+<p>不同：</p>
 </li>
+<li><strong>Set() 的操作方法：</strong> add(value) 添加某个值，返回 Set 结构本身。</li>
+<li><strong>Map() 的操作方法：</strong><ul>
+<li>size：返回成员总数。</li>
+<li>set(key, value)：设置 key 所对应的键值，然后返回整个 Map 结构。如果 key 已经有值，则键值会被更新，否则就新生成该键。</li>
+<li>get(key)：读取 key 对应的键值，如果找不到 key，返回 undefined。</li>
+</ul>
+</li>
+<li><strong>Set()</strong>参数为具有 Iterator 接口的数组；<strong>Map()</strong>参数为具有 Iterator 接口且成员都是一个表示键值对的数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = new Set([1, 2, 2, 3]);</span><br><span class="line">let arr2 = new Map([[&apos;id&apos;, 1], [&apos;name&apos;, &apos;huang&apos;]]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="区别-for-…-in-…-和-for-…-of-…-以及-forEach"><a href="#区别-for-…-in-…-和-for-…-of-…-以及-forEach" class="headerlink" title="区别 for … in … 和 for … of … 以及 forEach"></a>区别 for … in … 和 for … of … 以及 forEach</h5><ul>
+<li>for … in … 获取对象的键名。数组的键名为字符串，遍历会查找原型，能使用 break、continue、return</li>
+<li>for … of … 获取对象的键值。通常用于遍历数组，普通对象不能直接遍历（要使用生成器包装 function* ），能使用 break、continue、return</li>
+<li>forEach 不能使用 break、continue、return</li>
 </ul>
 
       
@@ -301,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/js-expression/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/04/js-function/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +312,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/11/jq-getel/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          jq - 获取元素
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/08/js-basicpro/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js - 基础程序结构</div>
+    <a href="/2018/07/21/other-comprehensive/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端综合问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
