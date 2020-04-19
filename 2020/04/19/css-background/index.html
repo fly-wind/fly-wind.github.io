@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>css - 背景与边框 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="尽量减少代码的重复量">
+  <meta name="description" content="综合背景属性使用技巧">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css - 背景与边框">
 <meta property="og:url" content="http://yoursite.com/2020/04/19/css-background/index.html">
 <meta property="og:site_name" content="飞天">
-<meta property="og:description" content="尽量减少代码的重复量">
+<meta property="og:description" content="综合背景属性使用技巧">
 <meta property="og:image" content="http://yoursite.com/assets/img/20200419-142402@2x.png">
-<meta property="og:updated_time" content="2020-04-19T06:26:46.376Z">
+<meta property="og:updated_time" content="2020-04-19T06:52:15.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css - 背景与边框">
-<meta name="twitter:description" content="尽量减少代码的重复量">
+<meta name="twitter:description" content="综合背景属性使用技巧">
 <meta name="twitter:image" content="http://yoursite.com/assets/img/20200419-142402@2x.png">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
@@ -162,14 +162,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>尽量减少代码的重复量</p>
+        <p>综合背景属性使用技巧</p>
 <a id="more"></a>
-<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ul>
+<h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><ul>
+<li><p>区分<code>background-clip</code>和<code>background-origin</code></p>
+<ol>
 <li><code>background-clip</code> 背景延伸位置。可选值有 border-box | padding-box | content-box，默认值为 border-box</li>
 <li><code>background-origin</code> 背景起始点。可选值有 border-box | padding-box | content-box，默认值为 padding-box</li>
-</ul>
-<h4 id="处理技巧"><a href="#处理技巧" class="headerlink" title="处理技巧"></a>处理技巧</h4><ul>
-<li>当块元素边框和背景需要一个深浅效果时，结合半透明实现，优点是后续更改时只需更背景色。如：<div style="width:100px;padding: 5px;border: 1px solid rgba(0,0,0,.2);border-radius: 5px;background: green;color: white;text-align: center;">提交</div>
+</ol>
+</li>
+<li><p>当块元素边框和背景需要一个深浅效果时，结合半透明实现，优点是后续更改时只需更背景色。如：</p>
+<div style="width:100px;padding: 5px;border: 1px solid rgba(0,0,0,.2);border-radius: 5px;background: green;color: white;text-align: center;">提交</div>
 
 </li>
 </ul>
@@ -179,29 +182,6 @@
 </ul>
 <p><img src="/assets/img/20200419-142402@2x.png" alt="随机颜色背景"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">background: hsl(20, 40%, 90%);</span><br><span class="line">background-image:</span><br><span class="line">    linear-gradient(90deg, red 11px, transparent 0),</span><br><span class="line">    linear-gradient(90deg, green 23px, transparent 0),</span><br><span class="line">    linear-gradient(90deg, yellow 41px, transparent 0);</span><br><span class="line">background-size: 41px 100%, 61px 100%, 83px 100%;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>当浏览器不支持属性时，使用回退机制。</p>
-<ol>
-<li>属性简写使用整合方式覆盖，如：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(...) bottom right;</span><br><span class="line">background-position: bottom 20px right 20px;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>渐变色背景，使用渐变色的平均值，如：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: rgb(255, 128, 0);</span><br><span class="line">background: linear-gradient(90deg, yellow, red);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>给元素添加辅助类，如：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: gray; &#125;</span><br><span class="line">.text h1 &#123;</span><br><span class="line">    color: transparent;</span><br><span class="line">    text-shadow: 0 0 3px gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用<code>@supports</code>，如：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: gray; &#125;</span><br><span class="line">@supports (text-shadow: 0 0 3px gray) &#123;</span><br><span class="line">    h1 &#123;</span><br><span class="line">        color: transparent;</span><br><span class="line">        text-shadow: 0 0 3px gray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用浏览器前缀，-webkit-、-moz-、-o-</li>
-</ol>
-</li>
-</ul>
 
       
 
@@ -311,6 +291,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/04/19/css-optimization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          css-优化点
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/08/04/js-function/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">js - 函数表达式</div>
@@ -371,10 +360,10 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2020 fly-wind
-    	</div>
-      	<div class="footer-right">
+      <div class="footer-left">
+        &copy; 2020 fly-wind
+      </div>
+      <div class="footer-right">
         <span id="busuanzi_container_site_pv">
           总访问量: <span id="busuanzi_value_site_pv"></span>
         </span>
@@ -383,12 +372,20 @@
           总访客: <span id="busuanzi_value_site_uv"></span>
         </span>
         <span> | </span>
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank"
+          >Yilia</a
+        >
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -465,7 +462,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jq</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,15 +470,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+                <a href="javascript:void(0)" class="js-tag color3">jq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
             <div class="clearfix"></div>
