@@ -15,12 +15,12 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/28/vue-tips/index.html">
 <meta property="og:site_name" content="飞天">
 <meta property="og:description" content="利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。">
-<meta property="og:image" content="http://yoursite.com/assets/img/20180228-145501@2x.png">
+<meta property="og:image" content="http://yoursite.com/images/loading.png">
 <meta property="og:updated_time" content="2018-07-21T05:56:00.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue - 全局提示框">
 <meta name="twitter:description" content="利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/20180228-145501@2x.png">
+<meta name="twitter:image" content="http://yoursite.com/images/loading.png">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
   
@@ -49,7 +49,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/header.jpg" class="js-avatar">
+			<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">fly-wind</a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/header.jpg" class="js-avatar">
+				<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">fly-wind</h1>
@@ -164,7 +164,7 @@
       
         <p>利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。</p>
 <a id="more"></a>
-<p><img src="/assets/img/20180228-145501@2x.png" alt="alt text"></p>
+<p><img src="/images/loading.png" data-original="/assets/img/20180228-145501@2x.png" alt="alt text"></p>
 <p>先上代码</p>
 <ul>
 <li>组件部分</li>
@@ -275,7 +275,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/02/28/vue-tips/" alt="微信分享二维码">
+      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/02/28/vue-tips/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -456,10 +456,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -472,11 +468,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
@@ -617,5 +617,5 @@
 
 </div>
   </div>
-</body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>
