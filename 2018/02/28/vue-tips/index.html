@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue - 全局提示框 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,12 +13,12 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/28/vue-tips/index.html">
 <meta property="og:site_name" content="飞天">
 <meta property="og:description" content="利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。">
-<meta property="og:image" content="http://yoursite.com/images/loading.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/20180228-145501@2x.png">
 <meta property="og:updated_time" content="2018-07-21T05:56:00.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue - 全局提示框">
 <meta name="twitter:description" content="利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。">
-<meta name="twitter:image" content="http://yoursite.com/images/loading.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20180228-145501@2x.png">
   
     <link rel="alternative" href="/atom.xml" title="飞天" type="application/atom+xml">
   
@@ -49,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+			<img src="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">fly-wind</a></h1>
@@ -101,7 +99,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+				<img src="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">fly-wind</h1>
@@ -139,7 +137,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-vue-tips" class="article article-type-post " itemscope itemprop="blogPost">
@@ -164,21 +162,21 @@
       
         <p>利用 vux-cli 组件创建一个全局自定义的提示框，有使用过 vux 的人都知道，vux 有一个叫 Popup 的组件，可以满足提示框的显示，如下图。但如果每个页面都要使用，那么每次都要引用，就会导致代码变冗余，此时，我们就应该考虑把该组件独立出来，这样每次使用时，只要使用一条语句调用即可。</p>
 <a id="more"></a>
-<p><img src="/images/loading.png" data-original="/assets/img/20180228-145501@2x.png" alt="alt text"></p>
+<p><img src="/assets/img/20180228-145501@2x.png" alt="alt text"></p>
 <p>先上代码</p>
 <ul>
 <li>组件部分</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;popup v-model=&quot;tips.showTips&quot; position=&quot;bottom&quot;&gt;</span><br><span class="line">  &lt;div :class=&quot;[</span><br><span class="line">    &#123;&apos;error&apos;: this.tips.type === &apos;error&apos;&#125;,</span><br><span class="line">    &#123;&apos;right&apos;: this.tips.type === &apos;right&apos;&#125;,</span><br><span class="line">    &#123;&apos;position-vertical-demo&apos;: true&#125;</span><br><span class="line">    ]&quot;&gt;&#123;&#123; tips.content &#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/popup&gt;</span><br><span class="line">&lt;router-view @tips=&quot;message&quot;&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><popup v-model="tips.showTips" position="bottom"></popup></span><br><span class="line">  <div :class="[</span><br><span class=" line">    {'error': this.tips.type === 'error'},<br><span class="line">    {'right': this.tips.type === 'right'},</span><br><span class="line">    {'position-vertical-demo': true}</span><br><span class="line">    ]">{{ tips.content }}</span></div></span><br><span class="line"></span><br><span class="line"><router-view @tips="message"></router-view></span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>js 部分</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    tips: &#123;</span><br><span class="line">      content: &apos;&apos;,</span><br><span class="line">      type: &apos;&apos;,</span><br><span class="line">      showTips: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  message (content, type) &#123;</span><br><span class="line">    this.tips.content = content</span><br><span class="line">    this.tips.type = type</span><br><span class="line">    this.tips.showTips = true</span><br><span class="line">    let that = this</span><br><span class="line">    setTimeout(function () &#123;</span><br><span class="line">      that.tips.showTips = false</span><br><span class="line">    &#125;, 1500)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">data () {</span><br><span class="line">  return {</span><br><span class="line">    tips: {</span><br><span class="line">      content: '',</span><br><span class="line">      type: '',</span><br><span class="line">      showTips: false</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">},</span><br><span class="line">methods: {</span><br><span class="line">  message (content, type) {</span><br><span class="line">    this.tips.content = content</span><br><span class="line">    this.tips.type = type</span><br><span class="line">    this.tips.showTips = true</span><br><span class="line">    let that = this</span><br><span class="line">    setTimeout(function () {</span><br><span class="line">      that.tips.showTips = false</span><br><span class="line">    }, 1500)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>首先，我们要在 App.vue 里使用 popup 组件，因为是在不同的地方调用同样的组件，那么我们应该考虑清楚，每个调用的组件之间有什么不同，然后通过传递不同的参数显示不同的提示框。 </li>
 <li>这里举例的提示框包含以下参数：提示内容（content）、提示的类型（right/error）。通过绑定变量值 showTips 控制其可见性。 </li>
 <li>定义一个方法 message 接收传递的参数，并赋值</li>
-<li>最后在 router-view 里指定自定义的事件，@ 后接自定义事件名称。<br>在其他任何一个页面，调用该提示框时只要使用 <code>this.$emit(&#39;tips&#39;, &#39;请求错误&#39;, &#39;error&#39;)</code> 即可。</li>
+<li>最后在 router-view 里指定自定义的事件，@ 后接自定义事件名称。<br>在其他任何一个页面，调用该提示框时只要使用 <code>this.$emit('tips', '请求错误', 'error')</code> 即可。</li>
 </ul>
 
       
@@ -275,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/02/28/vue-tips/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/02/28/vue-tips/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -359,7 +357,7 @@
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2020 fly-wind
+        © 2020 fly-wind
       </div>
       <div class="footer-right">
         <span id="busuanzi_container_site_pv">
@@ -371,18 +369,13 @@
         </span>
         <span> | </span>
         <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank"
-          >Yilia</a
-        >
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
         by Litten
       </div>
     </div>
   </div>
 </footer>
-<script
-  async
-  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
-></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>
@@ -456,11 +449,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +465,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,10 +481,9 @@
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
+</p><pre style="font-size: 12px;" q-show="jsonFail">  jsonContent:
     meta: false
     pages: false
     posts:
@@ -506,7 +502,7 @@
       categories: false
       tags: true
 </pre>
-          </p>
+          <p></p>
           <li class="search-li" q-repeat="items" q-show="isShow">
             <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             <p class="search-time">
@@ -617,5 +613,5 @@
 
 </div>
   </div>
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
-</html>
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

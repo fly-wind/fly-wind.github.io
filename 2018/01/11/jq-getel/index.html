@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>jq - 获取元素 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -47,7 +45,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+			<img src="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">fly-wind</a></h1>
@@ -99,7 +97,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+				<img src="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">fly-wind</h1>
@@ -137,7 +135,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-jq-getel" class="article article-type-post " itemscope itemprop="blogPost">
@@ -160,25 +158,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>任何元素，即使处于不同的结构，也应能通过各种方式获取相应的元素值，或通过自身，或通过同级。<br><a id="more"></a><br>假设原本的 dom 结构为以下结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot; id=&quot;baba&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaoming&quot;&gt;</span><br><span class="line">        第一代孩子</span><br><span class="line">        &lt;div id=&quot;s_child&quot; data-name=&quot;wawa&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot; id=&quot;xiaowang&quot;&gt;</span><br><span class="line">        孩子</span><br><span class="line">        &lt;div id=&quot;ss_child&quot;&gt;第二代孩子&lt;/div&gt;</span><br><span class="line">        &lt;select&gt;</span><br><span class="line">			&lt;option value=&quot;one&quot;&gt;one&lt;/option&gt;</span><br><span class="line">			&lt;option value=&quot;two&quot;&gt;two&lt;/option&gt;</span><br><span class="line">        &lt;/select&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>任何元素，即使处于不同的结构，也应能通过各种方式获取相应的元素值，或通过自身，或通过同级。<br><a id="more"></a><br>假设原本的 dom 结构为以下结构：<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><div class="parent" id="baba"><br><span class="line">    <div class="child" id="xiaoming"><br><span class="line">        第一代孩子</span><br><span class="line">        <div id="s_child" data-name="wawa">第二代孩子</div></span><br><span class="line">    </span></div></span><br><span class="line">    <div class="child" id="xiaowang"><br><span class="line">        孩子</span><br><span class="line">        <div id="ss_child">第二代孩子</div></span><br><span class="line">        <select>			<option value="one">one</option>			<option value="two">two</option>        </select></span><br><span class="line">    </span></div></span><br><span class="line"></span></div></span><br></pre></td></tr></tbody></table></figure><p></p>
 <ul>
 <li><p>获取某个类（.类名）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.parent&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$('.parent')</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>获取某个 id （#id名）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#baba&apos;)</span><br><span class="line">$(&apos;#s_child, #ss_child&apos;) // 获取两个元素，用逗号隔开</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$('#baba')</span><br><span class="line">$('#s_child, #ss_child') // 获取两个元素，用逗号隔开</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>获取某个属性值元素，如果是自定义标签，格式为：标签[data-自定义名称]），如果是标签自身的属性，格式应为：标签:属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;div[data-name]&apos;)</span><br><span class="line">$(&apos;select&gt;option:selected&apos;).val() // 获取选中的 select 框的值，与$(&apos;select&apos;).val() 等值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$('div[data-name]')</span><br><span class="line">$('select>option:selected').val() // 获取选中的 select 框的值，与$('select').val() 等值</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>获取子元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#baba div&apos;) // 返回 baba 的所有后代，包括一代和二代</span><br><span class="line">$(&apos;.parent div&apos;) // 同上</span><br><span class="line">$(&apos;#baba&gt;div&apos;) // 返回第一代</span><br><span class="line">$(&apos;#baba div&apos;).eq(n) // 返回 baba 的第 n 个后代，从 0 开始，如果为 0 ，返回 xiaoming 的节点</span><br><span class="line">$(&apos;#baba div&apos;).first() // 返回 baba 的第一个后代，即 xiaoming</span><br><span class="line">$(&apos;#baba div&apos;).last() // 返回 baba 的最后一个后代，即 ss_child</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$('#baba div') // 返回 baba 的所有后代，包括一代和二代</span><br><span class="line">$('.parent div') // 同上</span><br><span class="line">$('#baba>div') // 返回第一代</span><br><span class="line">$('#baba div').eq(n) // 返回 baba 的第 n 个后代，从 0 开始，如果为 0 ，返回 xiaoming 的节点</span><br><span class="line">$('#baba div').first() // 返回 baba 的第一个后代，即 xiaoming</span><br><span class="line">$('#baba div').last() // 返回 baba 的最后一个后代，即 ss_child</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>获取父元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.s_child&apos;).parent()  // 获取到第二个 div</span><br><span class="line">$(&apos;.s_child&apos;).parent().parent() // 获取到第一个 div ，即 baba</span><br><span class="line">$(&apos;.s_child&apos;).closest(&apos;.parent&apos;) // 往上查找，一查到类名为 parent 的元素就停止，并返回查到的节点 baba</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$('.s_child').parent()  // 获取到第二个 div</span><br><span class="line">$('.s_child').parent().parent() // 获取到第一个 div ，即 baba</span><br><span class="line">$('.s_child').closest('.parent') // 往上查找，一查到类名为 parent 的元素就停止，并返回查到的节点 baba</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>获取兄弟节点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#xiaoming&apos;).sibling() // 返回所有兄弟节点</span><br><span class="line">$(&apos;#xiaoming&apos;).next() // 返回下一个节点，即 xiaowang</span><br><span class="line">$(&apos;#xiaowang&apos;).prev() // 返回上一个节点，即 xiaoming</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$('#xiaoming').sibling() // 返回所有兄弟节点</span><br><span class="line">$('#xiaoming').next() // 返回下一个节点，即 xiaowang</span><br><span class="line">$('#xiaowang').prev() // 返回上一个节点，即 xiaoming</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
 
       
@@ -275,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/11/jq-getel/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/11/jq-getel/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -359,7 +357,7 @@
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2020 fly-wind
+        © 2020 fly-wind
       </div>
       <div class="footer-right">
         <span id="busuanzi_container_site_pv">
@@ -371,18 +369,13 @@
         </span>
         <span> | </span>
         <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank"
-          >Yilia</a
-        >
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
         by Litten
       </div>
     </div>
   </div>
 </footer>
-<script
-  async
-  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
-></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>
@@ -456,11 +449,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +465,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,10 +481,9 @@
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
+</p><pre style="font-size: 12px;" q-show="jsonFail">  jsonContent:
     meta: false
     pages: false
     posts:
@@ -506,7 +502,7 @@
       categories: false
       tags: true
 </pre>
-          </p>
+          <p></p>
           <li class="search-li" q-repeat="items" q-show="isShow">
             <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             <p class="search-time">
@@ -617,5 +613,5 @@
 
 </div>
   </div>
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
-</html>
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js - 表达式 | 飞天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -47,7 +45,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+			<img src="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">fly-wind</a></h1>
@@ -99,7 +97,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/images/loading.png" data-original="/assets/img/header.jpg" class="js-avatar">
+				<img src="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">fly-wind</h1>
@@ -137,7 +135,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-js-expression" class="article article-type-post " itemscope itemprop="blogPost">
@@ -182,27 +180,27 @@
 </ul>
 </li>
 </ul>
-<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>函数表达式与函数声明有所不同。<br>函数表达式要先定义才能使用，这样的函数也是匿名函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var say = function() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">say();</span><br></pre></td></tr></table></figure></p>
-<p>函数声明的函数可以直接调用，在代码执行之前就会读取函数的声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">say();</span><br><span class="line">function say() &#123;</span><br><span class="line">    alert(&apos;hello&apos;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><p>函数表达式与函数声明有所不同。<br>函数表达式要先定义才能使用，这样的函数也是匿名函数。<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var say = function() {</span><br><span class="line">    alert('hello');</span><br><span class="line">};</span><br><span class="line">say();</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>函数声明的函数可以直接调用，在代码执行之前就会读取函数的声明<br></p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">say();</span><br><span class="line">function say() {</span><br><span class="line">    alert('hello');</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="对象创建表达式"><a href="#对象创建表达式" class="headerlink" title="对象创建表达式"></a>对象创建表达式</h3><ul>
 <li><p>内置构造函数创建对象，括号里可以传入不同的参数（数值，字符串，布尔值）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object()</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>字面量创建对象。当参数不稳定时，建议使用字面量来创建对象（原因不详）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = {a:1};</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>自定义构造函数创建对象<br>如果没有指定的 return 对象，默认 return this，不需要明写，返回的必须是对象，如果不是，返回值将会被忽略，跟默认返回一样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person = function (name)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  // return this;</span><br><span class="line">&#125;;</span><br><span class="line">var obj = new Person(&apos;zhu&apos;);</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Person = function (name){</span><br><span class="line">  this.name = name;</span><br><span class="line">  // return this;</span><br><span class="line">};</span><br><span class="line">var obj = new Person('zhu');</span><br><span class="line">console.log(obj.name);</span><br></pre></td></tr></tbody></table></figure>
 <p>自定义构造函数看起来跟普通函数一样，如果在创建对象时，没有使用 new 就直接调用了，虽然没有报错，却也得不到自己要的结果，因为此时构造函数里的 this 指向的是全局的 window 对象，使用 window.xxx 即可查看到相应的值。<br>顺便提一下，数组的创建，可以通过 new Array() 或者字面量来创建，一般采取字面量来创建，方便简洁，并且不容易出错。注意的一点是 Array() 参数为 <strong>一个数值</strong> 时，代表的是数组的长度，字面量可以直接赋予第一个的值，这也意味着如果 Array() 参数传递的是一个浮点型的值，将会出错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(2);</span><br><span class="line">console.log(arr[0]) // undefined</span><br><span class="line">var arr = [2];</span><br><span class="line">console.log(arr[0]) // 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array(2);</span><br><span class="line">console.log(arr[0]) // undefined</span><br><span class="line">var arr = [2];</span><br><span class="line">console.log(arr[0]) // 2</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <h3 id="属性访问表达式"><a href="#属性访问表达式" class="headerlink" title="属性访问表达式"></a>属性访问表达式</h3><p>点号表示法只适用于当访问的属性名称是合法的标识符且知道要访问的属性名字时，如果属性名是通过求值得到、或包含空格、或为数值、或为保留字，此时应该使用方括号表示法</p>
 <ul>
 <li><p>点号表示法，点号后面不能接数字 <code>obj.x</code><br>如果对数字字面量使用该方法，且数字没有小数点没有指数，应在点号之前留个空格，避免后面的方法被认为是小数点的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1 .x</span><br><span class="line">// 1..x</span><br><span class="line">// 1.0.x</span><br><span class="line">// (1).x</span><br><span class="line">// 1</span><br><span class="line">.x</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1 .x</span><br><span class="line">// 1..x</span><br><span class="line">// 1.0.x</span><br><span class="line">// (1).x</span><br><span class="line">// 1</span><br><span class="line">.x</span><br></pre></td></tr></tbody></table></figure>
 </li>
-<li><p>方括号表示法 <code>obj[&#39;x&#39;]</code></p>
+<li><p>方括号表示法 <code>obj['x']</code></p>
 <h3 id="调用表达式"><a href="#调用表达式" class="headerlink" title="调用表达式"></a>调用表达式</h3><p>f(x)</p>
 </li>
 </ul>
@@ -301,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/js-expression/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/js-expression/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -385,7 +383,7 @@
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2020 fly-wind
+        © 2020 fly-wind
       </div>
       <div class="footer-right">
         <span id="busuanzi_container_site_pv">
@@ -397,18 +395,13 @@
         </span>
         <span> | </span>
         <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank"
-          >Yilia</a
-        >
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
         by Litten
       </div>
     </div>
   </div>
 </footer>
-<script
-  async
-  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
-></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>
@@ -482,11 +475,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,7 +491,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,10 +507,9 @@
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
+</p><pre style="font-size: 12px;" q-show="jsonFail">  jsonContent:
     meta: false
     pages: false
     posts:
@@ -532,7 +528,7 @@
       categories: false
       tags: true
 </pre>
-          </p>
+          <p></p>
           <li class="search-li" q-repeat="items" q-show="isShow">
             <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             <p class="search-time">
@@ -643,5 +639,5 @@
 
 </div>
   </div>
-<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
-</html>
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
