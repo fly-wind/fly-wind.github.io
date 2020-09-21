@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2020/09/21/cache/index.html">
 <meta property="og:site_name" content="飞天">
 <meta property="og:description" content="为提高性能，浏览器缓存是必不可少的一个策略，浏览器缓存指对资源在客户端以及服务器存储副本。">
-<meta property="og:updated_time" content="2020-09-21T16:26:40.058Z">
+<meta property="og:updated_time" content="2020-09-21T16:40:50.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器缓存">
 <meta name="twitter:description" content="为提高性能，浏览器缓存是必不可少的一个策略，浏览器缓存指对资源在客户端以及服务器存储副本。">
@@ -161,13 +161,13 @@
         <p>为提高性能，浏览器缓存是必不可少的一个策略，浏览器缓存指对资源在客户端以及服务器存储副本。</p>
 <a id="more"></a>
 <h4 id="缓存分类"><a href="#缓存分类" class="headerlink" title="缓存分类"></a>缓存分类</h4><ul>
-<li><p>强缓存（本地缓存）  </p>
+<li><p>强缓存（本地缓存）<br>浏览器请求资源时，先直接到达强缓存阶段，如果命中则返回对应资源，否则进入协商缓存。实现方式如下：</p>
 <ul>
 <li><code>Cache-Control</code> 常见值有 <code>no-cache</code> <code>no-store</code> <code>max-age</code></li>
 <li><code>Expires</code> 如：Tue, 21 Sep 2021 16:18:14 GMT</li>
 </ul>
 </li>
-<li><p>协商缓存</p>
+<li><p>协商缓存<br>当强缓存未命中或按F5强制刷新时，会进入协商缓存。生效返回304，否则返回200。实现方式如下：</p>
 <ul>
 <li><code>If-None-Match</code>（请求）和<code>ETag</code>（响应）一对报文</li>
 <li><code>If-Modified-Since</code>（请求）和<code>Last-Modified</code> （响应）一对报文</li>
@@ -446,10 +446,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -471,6 +467,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
             
             <div class="clearfix"></div>
